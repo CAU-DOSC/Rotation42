@@ -21,7 +21,7 @@ Your description start form next line and do not delete lines upto this point.
 	- 4가지 함수 각각의 소요시간을 출력
 - - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- 
 
-<Ownership>
+# 역할 분담
 의섭 - 조장/ README2.txt/T.Juggle.c/gc.c
 민기 - main.c 
 성규 - triv.c 
