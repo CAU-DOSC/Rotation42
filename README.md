@@ -77,6 +77,11 @@ Your description start form next line and do not delete lines upto this point.
 7. 시간 계산
 	 time.h 를 이용하여 각각의 함수에서 결과값을 반환해내는데 소요된 시간을 계산
 	 
-# Test 결과
+# Test 결과 
+n=100000, d=2000
+Trivial    :
+reverse    :
+Block-Swap :
+Juggling   :
 
-# 
+ 
