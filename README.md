@@ -23,8 +23,8 @@ Your description start form next line and do not delete lines upto this point.
 
 <Ownership>
 의섭 - 조장/ README2.txt/T.Juggle.c/gc.c
-민기 - main.c
-성규 - triv.c
+민기 - main.c 
+성규 - triv.c 
 동진 - T.bw.c
 경태 - T.bw.c/ reverse.c
 
@@ -68,20 +68,21 @@ Your description start form next line and do not delete lines upto this point.
 
 4. GCD
 	juggle함수의 간소화를 위하여 GCD 함수 구현
+ 
 
-
-5. bw
+5. bw    
 
 6. reverse
 
 7. 시간 계산
 	 time.h 를 이용하여 각각의 함수에서 결과값을 반환해내는데 소요된 시간을 계산
 	 
-# Test 결과 
+# Test 결과  
 n=100000, d=2000
 Trivial    :
-reverse    :
-Block-Swap :
-Juggling   :
-
- 
+reverse    : 
+Block-Swap : 
+Juggling   :
+ 
+# 추론 결과                
+  
