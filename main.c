@@ -1,28 +1,112 @@
-#include <stdio.h>
-#include<time.h>
+#include "rotation.h"
 
-double T_bw(char*,int,int);
-double T_rev(char*,int,int);
-double T_triv(char*,int,int);
-double T_jugg(char*,int,int);
+void T_triv(char * inputstr, int d, int n);
+void T_juggle(char * inputstr, int d, int n);
+void T_bw(char * string, int length, int d);
+void T_rev(char * string, int d, int n);
 
 int main()
 {
-	int n=0;
-	int d=0;
+	int n, d, i, select;
+	clock_t first, end;
+	double time1;
 
-	printf("Enter the  number to do work(d) and number of size of string(n) :");
-	scanf("%d %d",&d,&n);
-	
-
-
-	char*str=(char*)malloc(sizeof(char)*n);
+	scanf("%d", &n);
 	srand(time(NULL));
-	for(int i=0;i<n;i++)
-		str[i]=(rand()%26)+65;
 
-	printf("STR Length\tROTATE Distance\tT.trivial\tT.juggle\tT.bw\tT.reverse\n");
-	printf("%d\t%d\t%lf\t%lf\t%lf\t%lf", n,d,T_triv(str, d, n), T_jugg(str, d, n), T_bw(str, d, n), T_rev(str,d,n));
+	scanf("%d", &d);
+
+	printf("1. trivial 2. juggling 3. bw 4. reverse\n");
+	scanf("%d", &select);
+
+	char* arr = (char*)malloc(sizeof(char)*(n + 1));
+	char inputchar[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	for (i = 0; i < n; i++)
+	{
+		arr[i] = inputchar[rand() % 51 + 1];
+	}
+
+	arr[n] = '\0';
+
+	if (select == 1)
+	{
+		first = clock();
+
+		T_triv(arr, d, n);
+
+		end = clock();
+
+		time1 = (double)((double)(end - first) / CLOCKS_PER_SEC);
+		printf("trivial 실행시간 : %lf\n", time1);
+	}
+
+	if (select == 2)
+	{
+		first = clock();
+
+		T_juggle(arr, d, n);
+
+		end = clock();
+
+		time1 = (double)((double)(end - first) / CLOCKS_PER_SEC);
+		printf("juggling 실행 시간 : %lf\n", time1);
+	}
+	
+	if (select == 3)
+	{
+			first = clock();
+
+			T_bw(arr, n, d);
+
+			end = clock();
+
+			time1 = (double)((end - first) / CLOCKS_PER_SEC);
+
+			printf("bw 실행 시간 : %lf\n", time1);
+	}
+	/*
+	if (select == 3)
+	{
+		if (d < 0)
+		{
+			d *= -1;
+			first = clock();
+
+			T_bw(arr, d, n);
+
+			end = clock();
+
+			time1 = (double)((end - first) / CLOCKS_PER_SEC);
+			printf("bw 실행 시간 : %lf\n", time1);
+		}
+
+		else if (d > 0)
+		{
+			first = clock();
+
+			T_bw(arr, n - d, n);
+
+			end = clock();
+
+			time1 = (double)((end - first) / CLOCKS_PER_SEC);
+			printf("bw 실행 시간 : %lf\n", time1);
+		}
+	}
+	*/
+	if (select == 4)
+	{
+		first = clock();
+
+		T_rev(arr, d, n);
+
+		end = clock();
+
+		time1 = (double)((double)(end - first) / CLOCKS_PER_SEC);
+		printf("reverse 실행시간 : %lf\n", time1);
+	}
 
 	return 0;
 }
+			
+
+
