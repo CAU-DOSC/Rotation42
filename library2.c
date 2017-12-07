@@ -1,5 +1,26 @@
 #include "rotation.h"
 
+void reverseArray(char array[], int start, int end)
+{
+	int i, temp;
+	if (start == 0)
+	{
+		for (i = start; i <= (end / 2); i++)
+		{
+			temp = array[i];
+			array[i] = array[end - i];
+			array[end - i] = temp;
+		}
+	}
+	else
+	{
+		strrev(array + start);
+	}
+}
+
+
+
+/*
 void swap(char arr[], int i1, int i2, int d)
 {
 	for (int i = 0; i<d; ++i)
@@ -9,6 +30,7 @@ void swap(char arr[], int i1, int i2, int d)
 		arr[i2 + i] = temp;
 	}
 }
+*/
 
 int GCD(int a, int b)
 {

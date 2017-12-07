@@ -161,6 +161,26 @@ void T_bw(char * string, int length, int d)
 	}
 }
 
+void T_rev(char *inputstr, int d, int n)
+{
+	if (d > 0)
+	{
+		reverseArray(inputstr, n - d, n - 1);
+		reverseArray(inputstr, 0, n - d - 1);
+		reverseArray(inputstr, 0, n - 1);
+	}
+
+	else if (d < 0)
+	{
+		d = d*(-1);
+		reverseArray(inputstr, 0, d-1);
+		reverseArray(inputstr, d, n - 1);
+		reverseArray(inputstr, 0, n - 1);
+	}
+}
+
+
+/*
 void T_rev(char * string, int d, int n)
 {
 	char temp;
@@ -192,3 +212,4 @@ void T_rev(char * string, int d, int n)
 		string[n - i - 1] = temp;
 	}
 }
+*/
