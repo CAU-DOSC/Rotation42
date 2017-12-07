@@ -2,7 +2,7 @@
 
 void reverseArray(char array[], int start, int end)
 {
-	int i, temp;
+	int i, temp, temp_start, temp_end;
 	if (start == 0)
 	{
 		for (i = start; i <= (end / 2); i++)
@@ -12,10 +12,22 @@ void reverseArray(char array[], int start, int end)
 			array[end - i] = temp;
 		}
 	}
+
 	else
 	{
 		strrev(array + start);
 	}
+	/*
+	else
+	{
+		for (i = 0; i <= ((end-start)/ 2); i++)
+		{
+			temp = array[i+start];
+			array[i+start] = array[end - i];
+			array[end - i] = temp;
+		}
+	}
+	*/
 }
 
 

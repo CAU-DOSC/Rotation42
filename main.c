@@ -17,7 +17,7 @@ int main()
 	scanf("%d", &d);
 
 	printf("1. trivial 2. juggling 3. bw 4. reverse\n");
-	scanf("%d", &select);
+//	scanf("%d", &select);
 
 	char* arr = (char*)malloc(sizeof(char)*(n + 1));
 	char inputchar[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -27,9 +27,9 @@ int main()
 	}
 
 	arr[n] = '\0';
-
-	if (select == 1)
-	{
+	/*
+//	if (select == 1)
+	//{
 		first = clock();
 
 		T_triv(arr, d, n);
@@ -38,10 +38,10 @@ int main()
 
 		time1 = (double)((double)(end - first) / CLOCKS_PER_SEC);
 		printf("trivial 실행시간 : %lf\n", time1);
-	}
-
-	if (select == 2)
-	{
+	//}
+	*/
+	//if (select == 2)
+	//{
 		first = clock();
 
 		T_juggle(arr, d, n);
@@ -50,10 +50,10 @@ int main()
 
 		time1 = (double)((double)(end - first) / CLOCKS_PER_SEC);
 		printf("juggling 실행 시간 : %lf\n", time1);
-	}
+	//}
 	
-	if (select == 3)
-	{
+	//if (select == 3)
+	//{
 		first = clock();
 
 		T_bw(arr, n, d);
@@ -63,7 +63,7 @@ int main()
 		time1 = (double)((double)(end - first) / CLOCKS_PER_SEC);
 
 		printf("bw 실행 시간 : %lf\n", time1);
-	}
+	//}
 	/*
 	if (select == 3)
 	{
@@ -93,8 +93,8 @@ int main()
 		}
 	}
 	*/
-	if (select == 4)
-	{
+	//if (select == 4)
+	//{
 		first = clock();
 
 		T_rev(arr, d, n);
@@ -103,7 +103,7 @@ int main()
 
 		time1 = (double)((double)(end - first) / CLOCKS_PER_SEC);
 		printf("reverse 실행시간 : %lf\n", time1);
-	}
+	//}
 
 	return 0;
 }
