@@ -54,15 +54,15 @@ int main()
 	
 	if (select == 3)
 	{
-			first = clock();
+		first = clock();
 
-			T_bw(arr, n, d);
+		T_bw(arr, n, d);
 
-			end = clock();
+		end = clock();
 
-			time1 = (double)((end - first) / CLOCKS_PER_SEC);
+		time1 = (double)((double)(end - first) / CLOCKS_PER_SEC);
 
-			printf("bw 실행 시간 : %lf\n", time1);
+		printf("bw 실행 시간 : %lf\n", time1);
 	}
 	/*
 	if (select == 3)

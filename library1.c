@@ -123,6 +123,9 @@ void T_bw(char * string, int length, int d)
 	while (d <= 0)
 		d = length + d;
 
+	if (d == length)
+		exit(0);
+
 	if (d < length - d)
 	{
 		for (int i = 0; i < d; i++)
@@ -131,6 +134,8 @@ void T_bw(char * string, int length, int d)
 			*(string + i) = *(string + length - d + i);
 			*(string + length - d + i) = temp;
 		}
+		
+		T_bw(string, length - d, d);
 	}
 
 	else if (d == length - d)
@@ -151,6 +156,8 @@ void T_bw(char * string, int length, int d)
 			*(string + i) = *(string + i + d);
 			*(string + i + d) = temp;
 		}
+
+		T_bw(string + length - d, d, 2 * d - length);
 	}
 }
 
