@@ -125,10 +125,10 @@ void T_bw(char * string, int length, int d)
 
 	if (d == length)
 		exit(0);
-
+int i;
 	if (d < length - d)
 	{
-		for (int i = 0; i < d; i++)
+		for (i = 0; i < d; i++)
 		{
 			temp = *(string + i);
 			*(string + i) = *(string + length - d + i);
@@ -140,7 +140,7 @@ void T_bw(char * string, int length, int d)
 
 	else if (d == length - d)
 	{
-		for (int i = 0; i < d; i++)
+		for (i = 0; i < d; i++)
 		{
 			temp = *(string + i);
 			*(string + i) = *(string + length - d + i);
@@ -150,7 +150,7 @@ void T_bw(char * string, int length, int d)
 
 	else
 	{
-		for (int i = 0; i < length - d; i++)
+		for (i = 0; i < length - d; i++)
 		{
 			temp = *(string + i);
 			*(string + i) = *(string + i + d);

@@ -1,4 +1,4 @@
-#include "rotation.h"
+	#include "rotation.h"
 
 void T_triv(char * inputstr, int d, int n);
 void T_juggle(char * inputstr, int d, int n);
@@ -28,7 +28,7 @@ int main()
 
 	arr[n] = '\0';
 
-	if (select == 1)
+//	if (select == 1)
 	{
 		first = clock();
 
@@ -40,7 +40,7 @@ int main()
 		printf("trivial 실행시간 : %lf\n", time1);
 	}
 
-	if (select == 2)
+//	if (select == 2)
 	{
 		first = clock();
 
@@ -52,7 +52,7 @@ int main()
 		printf("juggling 실행 시간 : %lf\n", time1);
 	}
 	
-	if (select == 3)
+//	if (select == 3)
 	{
 		first = clock();
 
@@ -93,7 +93,7 @@ int main()
 		}
 	}
 	*/
-	if (select == 4)
+//	if (select == 4)
 	{
 		first = clock();
 
