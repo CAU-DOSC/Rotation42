@@ -144,7 +144,7 @@ char * T_bw(char * string, int length, int d)
 	return string;
 }
 
-void T_rev(char *inputstr, int d, int n)
+char * T_rev(char *inputstr, int d, int n)
 {
 	if (d > 0)
 	{

@@ -3,11 +3,11 @@
 char * T_triv(char * inputstr, int d, int n);
 char * T_juggle(char * inputstr, int d, int n);
 char * T_bw(char * string, int length, int d);
-char * T_rev(char * string, int d, int n);
+char * T_rev(char * inputstr, int d, int n);
 
 int main()
 {
-	int n[3], d[3], i, j;
+	int n[5], d[5], i, j;
 	clock_t first, end;
 	double time_triv[5], time_jug[5], time_bw[5], time_rev[5];
 	for (j = 0; j < 5; j++)
@@ -31,7 +31,7 @@ int main()
 		
 			first = clock();
 
-			T_triv(arr, d, n);
+			T_triv(arr, d[j], n[j]);
 
 			end = clock();
 
