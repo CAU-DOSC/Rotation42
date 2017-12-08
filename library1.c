@@ -1,6 +1,6 @@
 #include "rotation.h"
 
-void T_triv(char * inputstr, int d, int n)
+char T_triv(char * inputstr, int d, int n)
 {
 	int i, j;
 	char temp;
@@ -88,36 +88,9 @@ void T_juggle(char * inputstr, int d, int n)
 		}
 	}
 }
-/*
-void T_bw(char arr[], int d, int size)
-{
-	clock_t first, end;
-	double time_1;
-	if (d == 0 || d == size)
-		return;
 
-	if (size - d == d)
-	{
-		swap(arr, 0, size - d, d);
-		return;
-	}
-
-	if (d < size - d)
-	{
-		swap(arr, 0, size - d, d);
-		T_bw(arr, d, size - d);
-	}
-
-	else
-	{
-		swap(arr, 0, d, size - d);
-		T_bw(arr + size - d, (2 * d) - size, d);
-	}
-}
-*/
 void T_bw(char * string, int length, int d)
 {
-	// d is displacement of the characters before and after change  
 	char temp;
 
 	while (d <= 0)
@@ -179,37 +152,3 @@ void T_rev(char *inputstr, int d, int n)
 	}
 }
 
-
-/*
-void T_rev(char * string, int d, int n)
-{
-	char temp;
-
-	while (d <= 0)
-		d = d + n;
-
-	if (d > n)
-		d = d%n;
-
-	for (int i = 0; i < d / 2; i++)
-	{
-		temp = string[i];
-		string[i] = string[d - i - 1];
-		string[d - i - 1] = temp;
-	}
-
-	for (int i = d; i < (d + n) / 2; i++)
-	{
-		temp = string[i];
-		string[i] = string[n - (i - d) - 1];
-		string[n - (i - d) - 1] = temp;
-	}
-
-	for (int i = 0; i < n / 2; i++)
-	{
-		temp = string[i];
-		string[i] = string[n - i - 1];
-		string[n - i - 1] = temp;
-	}
-}
-*/
