@@ -1,16 +1,16 @@
 #include "rotation.h"
 
-void T_triv(char * inputstr, int d, int n);
-void T_juggle(char * inputstr, int d, int n);
-void T_bw(char * string, int length, int d);
-void T_rev(char * string, int d, int n);
+char * T_triv(char * inputstr, int d, int n);
+char * T_juggle(char * inputstr, int d, int n);
+char * T_bw(char * string, int length, int d);
+char * T_rev(char * string, int d, int n);
 
 int main()
 {
 	int n[3], d[3], i, j;
 	clock_t first, end;
-	double time_triv[3], time_jug[3], time_bw[3], time_rev[3];
-	for (j = 0; j < 3; j++)
+	double time_triv[5], time_jug[5], time_bw[5], time_rev[5];
+	for (j = 0; j < 5; j++)
 	{
 		scanf("%d", &n[j]);
 		srand(time(NULL));
@@ -70,7 +70,7 @@ int main()
 	
 	printf("STRLength \t ROTATEdistance \t T.trivial \t T.juggle \t T.bw \t \t T.reverse \n");
 
-	for (j=0; j<3; j++)
+	for (j=0; j<5; j++)
 	{
 		printf("%d \t %d \t \t \t %lf \t %lf \t %lf \t %lf \n", n[j], d[j], time_triv[j], time_jug[j], time_bw[j], time_rev[j]);
 	}

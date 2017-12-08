@@ -1,6 +1,6 @@
 #include "rotation.h"
 
-char T_triv(char * inputstr, int d, int n)
+char * T_triv(char * inputstr, int d, int n)
 {
 	int i, j;
 	char temp;
@@ -33,16 +33,18 @@ char T_triv(char * inputstr, int d, int n)
 			inputstr[0] = temp;
 		}
 	}
+
+	return inputstr;
 }
 
-void T_juggle(char * inputstr, int d, int n)
+char * T_juggle(char * inputstr, int d, int n)
 {
 	int h, i, j, k, l, gcd, temp, da;
 
 
-
 	while (d>n)
 		d -= n;
+	
 	if (d<0)
 	{
 		da = 0 - d;
@@ -50,6 +52,7 @@ void T_juggle(char * inputstr, int d, int n)
 		k = n / gcd;
 		l = da / gcd;
 	}
+
 	else
 	{
 		gcd = GCD(n, d);
@@ -72,6 +75,7 @@ void T_juggle(char * inputstr, int d, int n)
 			}
 		}
 	}
+
 	else
 	{
 		for (i = 0; i<gcd; i++)
@@ -87,9 +91,11 @@ void T_juggle(char * inputstr, int d, int n)
 			}
 		}
 	}
+
+	return inputstr;
 }
 
-void T_bw(char * string, int length, int d)
+char * T_bw(char * string, int length, int d)
 {
 	char temp;
 
@@ -98,7 +104,9 @@ void T_bw(char * string, int length, int d)
 
 	if (d == length)
 		exit(0);
-int i;
+	
+	int i;
+	
 	if (d < length - d)
 	{
 		for (i = 0; i < d; i++)
@@ -132,6 +140,8 @@ int i;
 
 		T_bw(string + length - d, d, 2 * d - length);
 	}
+	
+	return string;
 }
 
 void T_rev(char *inputstr, int d, int n)
@@ -150,5 +160,7 @@ void T_rev(char *inputstr, int d, int n)
 		reverseArray(inputstr, d, n - 1);
 		reverseArray(inputstr, 0, n - 1);
 	}
+	
+	return inputstr;
 }
 
