@@ -110,9 +110,7 @@ declaration of important data and data types to be included in user header file
 
 	case 2: d = length - d >for i = 0 ~ d - 1 >>exchange i(th) letter and (i+length-d)th letter >>Then, we have A and B exchanged!
 
-	```
 	case 3: d > length - d
-	```
 
 	> for i = 0 ~ length - d >>exchange i(th) letter and (i+d)th letter >>Then, we have Ar and B exchanged!
 
@@ -150,3 +148,13 @@ screenshot ![final Report](https://i.imgur.com/57JCzH0.png)
 #추론 결과
 
 첫번째 경우(즉, 문자열의 길이가 천만이고 rotate distance가 만일 경우) juggling, bw, reverse 방법들의 실행시간이 똑같이 나왔다. 그러나 두번째 경우 즉, 문자열의 길이를 더 늘렸을 때 실행시간이 juggling, bw, reverse순으로 적었다. 이를 통해 첫번째 경우는 문자열의 길이가 짧아서 세 방법의 처리속도의 차이가 확연히 드러나지 않은 것이라는 것을 알 수 있다. 또, 두번째, 세번째, 네번째, 다섯번째 경우 각각에서 실행 시간이 trivial>juggling>bw>reverse임을 보아 reverse가 문자열을 rotation 하기 위한 가장 빠른 방법이고 bw가 그 다음으로 빠른 방법 그리고 juggling, trivial 순으로 빠른 방법임을 알 수 있다.
+
+속도: reverse<bw<juggling<trivial
+
+속도가 이렇게 나온 이유에 대한 추론
+
+reverse함수의 경우 재귀적으로 자기자신을 호출하지도 않고 그냥 reverse 하는 함수를 3번 호출해주면 되므로 가장 빠르다
+
+bw함수의 경우 2 부분으로(A,B) 나누어 그 중에서 하나를 다시 나누어(예를 들어, Ar, Al) swap하는 형식으로 reverse와 실행시간이 비슷할 것 같으나, 이 함수는 재귀함수이므로 자기 자신을 계속 호출해야 한다. 따라서 reverse보다 시간이 더 걸린다.
+
+juggling함수의 경우 한번에 gcd만큼의 칸을 옮긴다는 점에서 trivial보다 훨씬 빠르나, 원소 하나 하나를 shift하고 rotation하는 작업을 배열의 모든 원소에 해야 하기 때문에 실행시간이 오래 걸린다.
